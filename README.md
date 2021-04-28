@@ -8,7 +8,7 @@ typescript で npm 用の CLI とライブラリのパッケージを作成す�
 
 1. GitHub から import する(GitHubBox からは https://githubbox.com/hankei6km/my-starter-npm-cli-and-lib)
 1. fork
-1. `package.json` の `name` `version` `description` `license` あたりを新しいパッケージにあわせて変更。
+1. `package.json` の `name` `version` `description` `license` 、`LICENSE` あたりを新しいパッケージにあわせて変更。
 1. 新しい terminal を開き `$ npm run upgrade-interactive` 等でパッケージを更新。
 
 これで 'npm run csb:test'(`jest --watchAll`) が terminal(「yarn start」タブ) 内で実行される。
@@ -35,4 +35,6 @@ typescript で npm 用の CLI とライブラリのパッケージを作成す�
 
 ## ライセンス
 
-[CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/deed.ja)
+MIT License
+
+Copyright (c) 2021 hankei6km
