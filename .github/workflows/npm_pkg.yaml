@@ -1,0 +1,21 @@
+# https://docs.github.com/ja/actions/guides/publishing-nodejs-packages
+name: Node.js Package
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: npm_pkg
+    steps:
+    - uses: actions/checkout@v2
+    # npm に公開するように .npmrc ファイルを設定する
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm install
+      # prepublishOnly を外してここで明示的に buiuld の方が良いか
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
