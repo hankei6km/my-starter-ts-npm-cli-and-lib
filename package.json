@@ -1,6 +1,6 @@
 {
   "name": "my-starter-ts-npm-cli-and-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Typescript で CLI とライブラリの npm パッケージを作成するためのスターター。",
   "license": "MIT",
   "keywords": [],
@@ -10,7 +10,7 @@
     "dist"
   ],
   "bin": {
-    "count": "./dist/main.js"
+    "count": "dist/main.js"
   },
   "scripts": {
     "start": "tsc && node dist/main.js",
