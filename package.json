@@ -19,7 +19,7 @@
     "test": "jest",
     "clean": "rm dist/*",
     "upgrade-interactive": "npm-check --update",
-    "csb:test": "npm test -- --watchAll"
+    "csb:test": "npm test -- --runInBand --watchAll"
   },
   "dependencies": {
     "yargs": "^16.2.0"

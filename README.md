@@ -11,9 +11,9 @@ CodeSandbox 上でコードを編集し、GitHub Actions から npm レジスト
 1. 新しい terminal を開き `$ npm run upgrade-interactive` 等でパッケージを更新
 1. ブラウザーをリロードする
 
-これで terminal(「yarn start」タブ) 内で `jest --watchAll`(`csb:test`) が実行されるので、コードの編集等を行う。
+これで terminal(「yarn start」タブ) 内で `start` スクリプトが実行される(通常はエラーとなる)、後は必要に応じてコードの編集等を行う。
 
-コマンドとしての実行を試す場合は `npm run start -- foo.txt` のように実行する。
+テストの実行は CodeSandbox 上では `npm run csb:test` を利用する。コマンドとしての実行を試す場合は `npm run start -- foo.txt` のように実行する。
 
 ### CLI 部分の変更
 
@@ -56,12 +56,11 @@ GitHub で Release を Publish すると `npm pbulish` される。
 - [TypeScript で npm ライブラリ開発ことはじめ - Qiita](https://qiita.com/saltyshiomix/items/d889ba79978dadba63fd)
 - [TypeScript で CLI ツールを作って、npm パッケージにする - Qiita](https://qiita.com/suzuki_sh/items/f3349efbfe1bdfc0c634)
 - [yarn upgrade-interactive と同じように npm でも対話型な更新をしたい！ - Qiita](https://qiita.com/kotarella1110/items/08afeb61d493829711eb)
-- [Node.jsパッケージの公開 - GitHub Docs](https://docs.github.com/ja/actions/guides/publishing-nodejs-packages)
-- [GitHub Actionsでnpmに自動でリリースするworkflowを作ってみた | DevelopersIO](https://dev.classmethod.jp/articles/github-actions-npm-automatic-release/)
+- [Node.js パッケージの公開 - GitHub Docs](https://docs.github.com/ja/actions/guides/publishing-nodejs-packages)
+- [GitHub Actions で npm に自動でリリースする workflow を作ってみた | DevelopersIO](https://dev.classmethod.jp/articles/github-actions-npm-automatic-release/)
 
 ## ライセンス
 
 MIT License
 
 Copyright (c) 2021 hankei6km
-
