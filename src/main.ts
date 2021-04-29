@@ -5,7 +5,8 @@ import cli from './cli';
 
 const argv = yargs(hideBin(process.argv))
   .scriptName('count')
-  .usage('$0 [args]')
+  .usage('$0 [FILE]...')
+  .example('$0 foo.ts bar.ts', 'count chars in files')
   .demand(1)
   .help().argv;
 
