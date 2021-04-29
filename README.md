@@ -5,14 +5,13 @@ CodeSandbox 上でコードを編集し、GitHub Actions から npm レジスト
 
 ## 利用方法
 
-まだ記述の途中。
-
 1. GitHub から import する(GitHubBox からは https://githubbox.com/hankei6km/my-starter-npm-cli-and-lib)
 1. fork
-1. `package.json` の `name` `version` `description` `license` 、`LICENSE` あたりを新しいパッケージにあわせて変更
+1. `package.json` と `LICENSE` 等を新しいパッケージにあわせて変更(付録にテンプレート)
 1. 新しい terminal を開き `$ npm run upgrade-interactive` 等でパッケージを更新
+1. ブラウザーをリロードする
 
-これで 'npm run csb:test'(`jest --watchAll`) が terminal(「yarn start」タブ) 内で実行される。
+これで terminal(「yarn start」タブ) 内で `jest --watchAll`(`csb:test`) が実行されるので、コードの編集等を行う。
 
 コマンドとしての実行を試す場合は `npm run start -- foo.txt` のように実行する。
 
@@ -28,12 +27,29 @@ CodeSandbox 上でコードを編集し、GitHub Actions から npm レジスト
 
 ### npm publish
 
-GitHub で Release を Publish するとビルド実行後に `npm pulish` される。
+GitHub で Release を Publish すると `npm pbulish` される。
 
-なお、`prepublishOnly` 等は定義されていないので、手動で `npm publish` 等を実行してもビルドはされないので注意。
+なお、`prepublishOnly` 等は定義されていないので、手動で `npm publish` を実行してもビルドはされないので注意。
 
+## 付録
 
-## 既知の問題
+`package.json` に記述する情報のテンプレート。`license` を変更したら `LICENSE` ファイルの変更も忘れずに。
+
+```
+  "name": "<package-name>",
+  "version": "0.1.0",
+  "description": "<description>",
+  "author": "user <mail addr> (website url)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/<user>/<repository>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<user>/<repository>/issues"
+  },
+  "keywords": []
+```
 
 ## 参考
 
