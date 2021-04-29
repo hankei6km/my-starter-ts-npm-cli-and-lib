@@ -15,7 +15,6 @@
     "start:watch": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
     "build": "tsc",
     "test": "jest",
-    "prepublishOnly": "npm run build",
     "clean": "rm dist/*",
     "upgrade-interactive": "npm-check --update",
     "csb:test": "npm test -- --watchAll"

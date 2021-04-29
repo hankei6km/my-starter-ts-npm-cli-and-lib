@@ -2,8 +2,10 @@
 name: test
 on:
   push:
-    branches_ignore:
-      - master
+    branches:
+      - '**'
+    tags:
+      - '!v*'
 jobs:
 
   jest:
