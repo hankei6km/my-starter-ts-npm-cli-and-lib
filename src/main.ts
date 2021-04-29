@@ -12,7 +12,7 @@ const argv = yargs(hideBin(process.argv))
 (async () => {
   process.exit(
     await cli({
-      filename: argv._[0] as string,
+      filenames: argv._ as string[],
       stdout: process.stdout,
       stderr: process.stderr
     })

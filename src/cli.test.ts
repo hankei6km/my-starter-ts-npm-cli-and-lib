@@ -11,14 +11,17 @@ describe('cli()', () => {
     stderr.on('data', errData);
     expect(
       await cli({
-        filename: 'test/assets/test.txt',
+        filenames: ['test/assets/test1.txt', 'test/assets/test2.txt'],
         stdout,
         stderr
       })
     ).toEqual(0);
-    expect(outData.mock.calls.length).toEqual(1);
+    expect(outData.mock.calls.length).toEqual(2);
     expect(outData.mock.calls[0][0].toString('utf8')).toEqual(
-      'test/assets/test.txt: 15 chars\n'
+      'test/assets/test1.txt: 15 chars\n'
+    );
+    expect(outData.mock.calls[1][0].toString('utf8')).toEqual(
+      'test/assets/test2.txt: 17 chars\n'
     );
     expect(errData.mock.calls.length).toEqual(0);
   });
@@ -31,12 +34,15 @@ describe('cli()', () => {
     stderr.on('data', errData);
     expect(
       await cli({
-        filename: 'test/assets/fail.txt',
+        filenames: ['test/assets/test1.txt', 'test/assets/fail.txt'],
         stdout,
         stderr
       })
     ).toEqual(1);
-    expect(outData.mock.calls.length).toEqual(0);
+    expect(outData.mock.calls.length).toEqual(1);
+    expect(outData.mock.calls[0][0].toString('utf8')).toEqual(
+      'test/assets/test1.txt: 15 chars\n'
+    );
     expect(errData.mock.calls.length).toEqual(2);
     expect(errData.mock.calls[0][0].toString('utf8')).toEqual(
       "Error: ENOENT: no such file or directory, open 'test/assets/fail.txt'"
