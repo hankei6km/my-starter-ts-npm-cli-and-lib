@@ -23,11 +23,15 @@ CodeSandbox 上でコードを編集し、GitHub Actions から npm レジスト
 
 ### ライブラリー部分の変更
 
-`src/count.ts` を削除し、ライブラリのコードを記述。エクスポートしたい項目を `src/index.ts` へ記述。
+`src/count.ts` `src/count.test.ts` `test/*` を削除し、ライブラリのコードを記述。エクスポートしたい項目を `src/index.ts` へ記述。
 
 ### npm publish
 
-GitHub で Release を Publish すると `npm pbulish` される。
+以下の設定後に GitHub で Release を Publish すると `npm pbulish` される。
+
+1. GitHub にリポジトリを作成
+1. リポジトリの "Settings / Environment" から `npm_pkg` を作成
+1. Environment secrets に `NPM_TOKEN` を追加(内容は npm レジストリの Access Token)
 
 なお、`prepublishOnly` 等は定義されていないので、手動で `npm publish` を実行してもビルドはされないので注意。
 
@@ -64,3 +68,4 @@ GitHub で Release を Publish すると `npm pbulish` される。
 MIT License
 
 Copyright (c) 2021 hankei6km
+
