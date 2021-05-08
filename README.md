@@ -1,4 +1,4 @@
-# my-starter-npm-cli-and-lib
+# my-starter-ts-npm-cli-and-lib
 
 TypeScript で npm 用の CLI とライブラリのパッケージを作成するスターター。
 CodeSandbox 上でコードを編集し、GitHub Actions から npm レジストリーおよび GitHub Packages へ publish することを想定している。
