@@ -7,7 +7,7 @@ CodeSandbox 上でコードを編集し、GitHub Actions から npm レジスト
 
 このリポジトリをテンプレートとして新しいリポジトリを作成する。
 
-1. `$ gh repo create <name> --template https://github.com/hankei6km/my-starter-npm-cli-and-lib` でリポジトリ作成
+1. `$ gh repo create <name> --template https://github.com/hankei6km/my-starter-ts-npm-cli-and-lib` でリポジトリ作成
 1. `package.json` と `LICENSE` 等を新しいパッケージにあわせて変更(付録にテンプレート)
 1. `$ npm run upgrade-interactive` 等でパッケージを更新
 
