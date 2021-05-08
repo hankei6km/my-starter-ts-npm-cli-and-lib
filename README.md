@@ -1,13 +1,13 @@
-# my-starter-npm-cli-and-lib
+# my-starter-ts-npm-cli-and-lib
 
 TypeScript で npm 用の CLI とライブラリのパッケージを作成するスターター。
-CodeSandbox 上でコードを編集し、GitHub Actions から npm レジストリーおよび GitHub Packages へ publish することを想定している。
+CodeSandbox 上でコードを編集し、GitHub Actions から  GitHub Packages および npm レジストリーへ publish することを想定している。
 
 ## 利用方法
 
 このリポジトリをテンプレートとして新しいリポジトリを作成する。
 
-1. `$ gh repo create <name> --template https://github.com/hankei6km/my-starter-npm-cli-and-lib` でリポジトリ作成
+1. `$ gh repo create <name> --template https://github.com/hankei6km/my-starter-ts-npm-cli-and-lib` で作成
 1. `package.json` と `LICENSE` 等を新しいパッケージにあわせて変更(付録にテンプレート)
 1. `$ npm run upgrade-interactive` 等でパッケージを更新
 
@@ -27,7 +27,10 @@ CodeSandbox 上でコードを編集し、GitHub Actions から npm レジスト
 
 ### npm publish
 
-以下の設定後に GitHub で Release を Publish すると `npm publish` される。
+以下の設定後に GitHub で Release を Publish すると Relase の種類により GitHub Pages または npm レジストリーへ `npm publish` される。
+
+- Pre Release: GitHub Pages のみに publish される
+- Release: GitHub Pages および npm レジストリーへ publish される
 
 なお、`prepublishOnly` 等は定義されていないので、手動で `npm publish` を実行してもビルドはされないので注意。
 
@@ -37,6 +40,16 @@ CodeSandbox 上でコードを編集し、GitHub Actions から npm レジスト
 1. `npm_pkg` の secrets に `NPM_TOKEN` を追加(内容は npm レジストリの Access Token)
 
 現状では、`gh_pkg` への設定変更は行わない。
+
+#### GitHub Packages へ publish
+
+GitHub で Release を Publish すると `npm publish` される。このとき、scope はリポジトリの所有者(`$GITHUB_REPOSITORY` の所有者部分)へ置き換えられる。
+
+```console
+$ npm version prerelease
+$ git push origin
+$ gh release create v0.1.2-5 -t 0.1.2-5 --target <branch>
+```
 
 #### npm レジストリーへ publish
 
@@ -48,16 +61,6 @@ GitHub で Release を Publish すると `npm publish` される。ただし Pre
 $ npm version patch
 $ git push origin
 $ gh release create v0.1.2 -t 0.1.2
-```
-
-#### GitHub Packages へ publish
-
-GitHub で Release を Publish すると `npm publish` される。このとき、scope はリポジトリの所有者(`$GITHUB_REPOSITORY` の所有者部分)へ置き換えられる。
-
-```console
-$ npm version prerelease
-$ git push origin
-$ gh release create v0.1.2-5 -t 0.1.2-5 --target <branch>
 ```
 
 ## 付録
@@ -93,4 +96,6 @@ $ gh release create v0.1.2-5 -t 0.1.2-5 --target <branch>
 MIT License
 
 Copyright (c) 2021 hankei6km
+
+
 
