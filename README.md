@@ -63,6 +63,15 @@ $ git push origin
 $ gh release create v0.1.2 -t 0.1.2
 ```
 
+## ESM 対応
+
+[`setup-to-native-esm`](https://github.com/hankei6km/my-starter-ts-npm-cli-and-lib/tree/topic/setup-to-native-esm) ブランチで ESM 対応を実験的に行っている。
+
+- [Pure ESM package · GitHub](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
+- [ESM Support | ts-jest](https://kulshekhar.github.io/ts-jest/docs/next/guides/esm-support/)
+- [Native support for ES Modules · Issue #9430 · facebook/jest · GitHub](https://github.com/facebook/jest/issues/9430#issuecomment-616232029)
+- [jest.mock does not mock an ES module without Babel · Issue #10025 · facebook/jest · GitHub](https://github.com/facebook/jest/issues/10025)
+
 ## 付録
 
 `package.json` に記述する情報のテンプレート。`license` を変更したら `LICENSE` ファイルの変更も忘れずに。
@@ -96,6 +105,4 @@ $ gh release create v0.1.2 -t 0.1.2
 MIT License
 
 Copyright (c) 2021 hankei6km
-
-
 
