@@ -55,8 +55,6 @@ $ gh release create v0.1.2-5 -t 0.1.2-5 --target <branch>
 
 GitHub で Release を Publish すると `npm publish` される。ただし Pre Release のときは Publish されない。
 
-なお、`npm publish` に ` --access public` は指定されていないので、scope を利用する場合は注意。
-
 ```console
 $ npm version patch
 $ git push origin
